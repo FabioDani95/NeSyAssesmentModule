@@ -1,0 +1,26 @@
+# Core
+pydantic==2.5.0
+pyyaml==6.0.1
+python-dotenv==1.0.0
+
+# LLM
+openai==1.12.0
+
+# Neo4j
+neo4j==5.15.0
+
+# PDF Processing
+pymupdf>=1.24.0  # ← CAMBIATO: usa versione con wheel pre-compilato
+# pytesseract==0.3.10  # ← COMMENTATO per ora (opzionale)
+
+# Utils
+rapidfuzz==3.5.2
+pint==0.23
+jsonschema==4.20.0
+
+# Testing
+pytest==7.4.3
+pytest-mock==3.12.0
+
+# CLI
+click==8.1.7

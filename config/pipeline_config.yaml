@@ -1,0 +1,63 @@
+# ==========================================
+# Pipeline 5 V1 - Configuration
+# ==========================================
+
+# Feature Flags (V1: all disabled)
+features:
+  enable_feedback_loop: false      # Module 6 (V1.1)
+  enable_conflict_resolution: false # Module 7 (V1.1)
+
+# Neo4j Connection
+neo4j:
+  uri: "${NEO4J_URI}"
+  database: "${NEO4J_DATABASE}"
+  username: "${NEO4J_USER}"
+  password: "${NEO4J_PASSWORD}"
+  tbox_version: "V6.1"
+  connection_timeout: 30
+
+# LLM (OpenAI)
+llm:
+  model: "gpt-4-turbo"
+  api_key: "${OPENAI_API_KEY}"
+  temperature: 0.1
+  max_tokens: 4096
+  timeout: 120
+
+# Module 2: Semantic Retriever
+retrieval:
+  similarity_threshold: 0.75
+  max_chunks: 50
+  embedding_model: "text-embedding-3-small"
+
+# Module 3: Neural Extractor
+extraction:
+  confidence_threshold: 0.75
+  batch_size: 5
+
+# Module 4: Grounding Engine
+grounding:
+  fuzzy_threshold: 0.85
+  normalize_units: true
+
+# Module 5: Symbolic Validator
+validation:
+  strict_mode: false
+  check_constraints: true
+  check_consistency: true
+  check_completeness: true
+
+# Module 8: Neo4j Populator
+population:
+  use_merge: true
+  batch_size: 100
+  enable_provenance: true
+
+# Output Paths
+output:
+  extractions_dir: "./output/extractions/"
+
+# Logging
+logging:
+  level: "${LOG_LEVEL}"  # DEBUG, INFO, WARNING, ERROR
+EOF
